@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,15 +21,19 @@ namespace Wpf_Project_TTT
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Path);
         public MainWindow()
         {
             InitializeComponent();
             mainframe.NavigationService.Navigate(new Mainmenu());
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Path);
+            player.PlayLooping();
+            
 
-       
-          
-            player.Play();
+
+            
+
+
+
 
         }
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,17 +46,20 @@ namespace Wpf_Project_TTT
         {
             if ((string)FlipButton1.Content != "On")
             {
+                MainWindow.player.Play();
                 FlipButton1.Content = "On";
 
             }
             else
             {
+                MainWindow.player.Stop();
                 FlipButton1.Content = "Off";
             }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            
             
         }
     }

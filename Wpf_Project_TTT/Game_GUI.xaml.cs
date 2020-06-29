@@ -28,5 +28,10 @@ namespace Wpf_Project_TTT
         {
             NavigationService.Navigate(new Ingamemenu());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
