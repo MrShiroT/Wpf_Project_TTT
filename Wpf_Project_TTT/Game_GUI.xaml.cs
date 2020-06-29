@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,14 +14,19 @@ using System.Windows.Shapes;
 namespace Wpf_Project_TTT
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaktionslogik für Game_GUI.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Game_GUI : Page
     {
-        public MainWindow()
+        public Game_GUI()
         {
             InitializeComponent();
-            mainframe.NavigationService.Navigate(new Mainmenu());
+        }
+
+        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Ingamemenu());
         }
     }
 }
