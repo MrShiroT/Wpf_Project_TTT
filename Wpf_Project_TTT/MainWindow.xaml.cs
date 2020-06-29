@@ -24,6 +24,13 @@ namespace Wpf_Project_TTT
         {
             InitializeComponent();
             mainframe.NavigationService.Navigate(new Mainmenu());
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Path);
+
+       
+          
+            player.Play();
+
         }
+        
     }
 }

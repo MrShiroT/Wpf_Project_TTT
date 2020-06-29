@@ -11,7 +11,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace Wpf_Project_TTT
 {
     /// <summary>
@@ -19,35 +18,44 @@ namespace Wpf_Project_TTT
     /// </summary>
     public partial class Configuration : Page
     {
-        StringBuilder buildstring = new StringBuilder();
-
-        
-
-        
-
-        
+        public Configuration()
+        {
+            InitializeComponent();
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Mainmenu());
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            
-            
-        }
-
         private void FlipButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((string) FlipButton.Content != "On")
+            if((string) FlipButton.Content != "On")
             {
                 FlipButton.Content = "On";
-            } 
+
+            }
             else
             {
                 FlipButton.Content = "Off";
             }
+        }
+
+        private void FlipButton1_Click(object sender, RoutedEventArgs e)
+        {
+            if ((string)FlipButton1.Content != "On")
+            {
+                FlipButton1.Content = "On";
+
+            }
+            else
+            {
+                FlipButton1.Content = "Off";
+            }
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
             
         }
     }

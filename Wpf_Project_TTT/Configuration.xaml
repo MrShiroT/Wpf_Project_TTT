@@ -33,13 +33,12 @@
         <Button Content="Volume" Background="LightGoldenrodYellow" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Grid.Column="1"/>
         <Button Content="Back" Height="70" Background="LightGoldenrodYellow" Width="200" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Grid.Column="1" Click="Button_Click_1"/>
         <Button x:Name="FlipButton" Content="On" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="70" Width="74" Click="FlipButton_Click">
-            
+
         </Button>
-        <Button x:Name="FlipButton1" Content="On" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="70" Width="74">
-            
+        <Button x:Name="FlipButton1" Content="On" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="70" Width="74" Click="FlipButton1_Click">
+
         </Button>
-        <Slider x:Name="volumeSlider" Width="100"
-        ValueChanged="Slider_ValueChanged" Grid.Column="2" Margin="25,26,25,26" Grid.Row="5"/>
+        <Slider Grid.Column="2" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="120" ValueChanged="Slider_ValueChanged"/>
 
     </Grid>
 </Page>
