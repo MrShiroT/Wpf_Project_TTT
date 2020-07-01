@@ -17,7 +17,7 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        
+
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -29,26 +29,26 @@
             <RowDefinition Height="50"/>
 
         </Grid.RowDefinitions>
-        <Button Content="" Background="LightGoldenrodYellow"  Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="Button_Click"/>
-        <Button Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100"/>
+        <Button x:Name ="FieldButton3" Content="" Background="LightGoldenrodYellow"  Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton3_Click"/>
+        <Button x:Name ="FieldButton8" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton8_Click"/>
+        <Button x:Name ="FieldButton9" Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton9_Click"/>
+        <Button x:Name ="FieldButton5" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton5_Click"/>
+        <Button x:Name ="FieldButton4" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton4_Click"/>
+        <Button x:Name ="FieldButton2" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton2_Click"/>
+        <Button x:Name ="FieldButton6" Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton6_Click"/>
+        <Button x:Name ="FieldButton1" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton1_Click"/>
+        <Button x:Name ="FieldButton7" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton7_Click"/>
         <TextBlock 
             HorizontalAlignment="Left" 
             Grid.Row="3" 
-            VerticalAlignment="Top" 
+            VerticalAlignment="Bottom" 
             TextWrapping="NoWrap" 
             Height="61" 
             Width="77"
-            Background="LightSeaGreen" Margin="10,29,0,0"/>
-        <Button Content="Play again!" FontSize="20" Background="DarkSlateGray" Grid.Column="1" HorizontalAlignment="Right" Margin="0,56,58,0" Grid.Row="5" Width="184" Height="34" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="3" Text="Player 2" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"/>
-        <TextBlock HorizontalAlignment="Center" Grid.Row="3" Text="Player 1" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"/>
+            Background="LightSeaGreen" Margin="10,0,0,10"/>
+        <Button Visibility="Hidden" Content="Play again!" FontSize="20" Background="DarkSlateGray" Grid.Column="1" HorizontalAlignment="Right" Margin="0,56,58,0" Grid.Row="5" Width="184" Height="34" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="Playertwo"  Grid.Column="4" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="3" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"  />
+        <TextBlock x:Name="Playerone"  HorizontalAlignment="Center" Grid.Row="3" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"  />
         <Button  Grid.Column="4" HorizontalAlignment="Center" Margin="0,48,0,0" Grid.Row="5" VerticalAlignment="Top" Height="46" Width="66" Click="Button_Click_1"
                 >
             <TextBlock Text="Ingame menu" TextWrapping="Wrap" Width="56" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>

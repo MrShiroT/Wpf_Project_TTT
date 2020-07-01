@@ -25,12 +25,12 @@ namespace Wpf_Project_TTT
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           NavigationService.Navigate(new Game_GUI());
+           NavigationService.Navigate(new NamePlayers());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Game_GUI());
+            NavigationService.Navigate(new NamePlayers());
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

@@ -28,9 +28,9 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="Thin" VerticalAlignment="Center" Height="102" Width="376" FontSize="62"  Grid.ColumnSpan="3" Margin="67,0,0,0"><Run Language="de-de" Text="Ingame menu"/></TextBlock>
-        <Button Content="Resume" Background="LightGoldenrodYellow" Grid.Column="1" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Click="Button_Click"/>
-        <Button Content="Restart game" Background="LightGoldenrodYellow" Grid.Column="1" Height="69" Width="200" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563"/>
-        <Button Content="Back to mainmenu" Background="LightGoldenrodYellow" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Grid.Column="1" Click="Button_Click"/>
+        <Button x:Name="Resume" Content="Resume" Background="LightGoldenrodYellow" Grid.Column="1" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Click="Resume_Click" />
+        <Button x:Name="Restart" Content="Restart game" Background="LightGoldenrodYellow" Grid.Column="1" Height="69" Width="200" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Click="Restart_Click" />
+        <Button x:Name="Backtomainmenu" Content="Back to mainmenu" Background="LightGoldenrodYellow" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Grid.Column="1" Click="Backtomainmenu_Click"/>
         
 
     </Grid>

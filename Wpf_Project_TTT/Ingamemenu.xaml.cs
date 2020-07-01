@@ -23,7 +23,19 @@ namespace Wpf_Project_TTT
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+
+        private void Resume_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Game_GUI());
+        }
+
+        private void Restart_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Game_GUI());
+        }
+
+        private void Backtomainmenu_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Mainmenu());
         }

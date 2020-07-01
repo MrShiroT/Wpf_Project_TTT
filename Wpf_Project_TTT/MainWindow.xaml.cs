@@ -16,16 +16,27 @@ using System.Windows.Shapes;
 
 namespace Wpf_Project_TTT
 {
+    public enum fieldstate
+    {
+        Free,
+        Circle,
+        cross
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+
+        
         public static System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Path);
+        
         public MainWindow()
         {
             InitializeComponent();
             mainframe.NavigationService.Navigate(new Mainmenu());
+
             player.PlayLooping();
             
 

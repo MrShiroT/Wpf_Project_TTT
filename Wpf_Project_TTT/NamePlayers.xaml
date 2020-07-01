@@ -1,0 +1,40 @@
+﻿<Page x:Class="Wpf_Project_TTT.NamePlayers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf_Project_TTT"
+      mc:Ignorable="d" 
+      d:DesignHeight="507" d:DesignWidth="510" Background="LightSeaGreen"
+      Title="NamePlayers">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="150"/>
+
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="Thin" VerticalAlignment="Center" Height="102" Width="320" FontSize="62" Grid.ColumnSpan="3" Margin="0,0,90,0"><Run Language="de-de" Text="Your names"/></TextBlock>
+        <Button Content="Back to mainmenu" Background="LightGoldenrodYellow" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="-2.554,0.563" Grid.Column="1" Click="Button_Click"/>
+        <TextBox x:Name="Player1name" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Margin="0,23,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="37" TextChanged="Player1name_TextChanged" />
+        <TextBox x:Name="Player2name" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="37" TextChanged="Player2name_TextChanged"/>
+        <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="20,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="156" RenderTransformOrigin="0.531,0.343" Grid.ColumnSpan="2"><Run Text="Player"/><Run Text="1 (X)"/><Run Text=" "/><Run Language="de-de" Text=" "/><Run Text="="/></TextBlock>
+        <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="20,6,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="156" RenderTransformOrigin="0.531,0.343" Grid.ColumnSpan="2"><Run Text="Player"/><Run Text="2"/><Run Language="de-de" Text=" (O) "/><Run Text="="/></TextBlock>
+        <Button Content="Ready!" Background="LightGoldenrodYellow" Height="70" Width="200" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="-2.554,0.563" Grid.Column="1" Click="Button_Click" Grid.RowSpan="2"/>
+
+
+    </Grid>
+</Page>
