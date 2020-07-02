@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Media;
 using System.Text;
 using System.Windows;
@@ -19,13 +20,20 @@ namespace Wpf_Project_TTT
     /// </summary>
     public partial class Configuration : Page
     {
+        
         public Configuration()
         {
+            
             InitializeComponent();
+            
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+        {   
+            
+            
+            
             NavigationService.Navigate(new Mainmenu());
         }
 

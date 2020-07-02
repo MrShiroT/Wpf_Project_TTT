@@ -8,66 +8,81 @@
       d:DesignHeight="507" Width="510" Background="LightSeaGreen"
       Title="Game_GUI" >
 
-    <Grid HorizontalAlignment="Center" Width="510">
+
+
+    <Grid  HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="50"/>
 
         </Grid.RowDefinitions>
-        <Button x:Name ="FieldButton3" Content="" Background="LightGoldenrodYellow"  Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton3_Click"/>
-        <Button x:Name ="FieldButton8" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton8_Click"/>
-        <Button x:Name ="FieldButton9" Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton9_Click"/>
-        <Button x:Name ="FieldButton5" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton5_Click"/>
-        <Button x:Name ="FieldButton4" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton4_Click"/>
-        <Button x:Name ="FieldButton2" Content="" Background="LightGoldenrodYellow" Grid.Column="2" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton2_Click"/>
-        <Button x:Name ="FieldButton6" Content="" Background="LightGoldenrodYellow" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton6_Click"/>
-        <Button x:Name ="FieldButton1" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton1_Click"/>
-        <Button x:Name ="FieldButton7" Content="" Background="LightGoldenrodYellow" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Height="100" Width="100" Click="FieldButton7_Click"/>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Grid.Row="3" 
-            VerticalAlignment="Bottom" 
-            TextWrapping="NoWrap" 
-            Height="61" 
-            Width="77"
-            Background="LightSeaGreen" Margin="10,0,0,10"/>
-        <Button Visibility="Hidden" Content="Play again!" FontSize="20" Background="DarkSlateGray" Grid.Column="1" HorizontalAlignment="Right" Margin="0,56,58,0" Grid.Row="5" Width="184" Height="34" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="Playertwo"  Grid.Column="4" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="3" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"  />
-        <TextBlock x:Name="Playerone"  HorizontalAlignment="Center" Grid.Row="3" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.193,0.405" Height="22" Width="66"  />
-        <Button  Grid.Column="4" HorizontalAlignment="Center" Margin="0,48,0,0" Grid.Row="5" VerticalAlignment="Top" Height="46" Width="66" Click="Button_Click_1"
-                >
-            <TextBlock Text="Ingame menu" TextWrapping="Wrap" Width="56" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Button>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Grid.Row="3" 
-            VerticalAlignment="Top" 
-            TextWrapping="NoWrap" 
-            Height="61" 
-            Width="77"
-            Background="LightSeaGreen" Margin="17,29,0,0" Grid.Column="4"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Text="Player 1"/><Run Text="=  0 "/></TextBlock>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Text="Player 2"/><Run Text="= 0 "/></TextBlock>
-        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Language="de-de" Text="Draw"/><Run Text=" "/><Run Language="de-de" Text="= 0"/></TextBlock>
-        <ProgressBar Grid.Column="4" HorizontalAlignment="Left" Height="10" Margin="6,54,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="31,33,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="de-de" Text="Thinking"/>
-        </TextBlock>
 
+
+        <Grid x:Name="Container"  Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Button x:Name ="FieldButton1" Content="" Grid.Row="0" Grid.Column="0" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+            <Button x:Name ="FieldButton2" Content="" Grid.Row="0" Grid.Column="1" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+            <Button x:Name ="FieldButton3" Content="" Grid.Row="0" Grid.Column="2" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+
+            <Button x:Name ="FieldButton4" Content="" Grid.Row="1" Grid.Column="0" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+            <Button x:Name ="FieldButton5" Content="" Grid.Row="1" Grid.Column="1" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+            <Button x:Name ="FieldButton6" Content="" Grid.Row="1" Grid.Column="2" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+
+            <Button x:Name ="FieldButton7" Content="" Grid.Row="2" Grid.Column="0" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+            <Button x:Name ="FieldButton8" Content="" Grid.Row="2" Grid.Column="1" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click" />
+            <Button x:Name ="FieldButton9" Content="" Grid.Row="2" Grid.Column="2" Background="LightGoldenrodYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" Width="100" Click="Button_Click"/>
+
+        </Grid>
+
+
+
+        <TextBlock Text="" 
+            HorizontalAlignment="Stretch" 
+            Grid.Row="2"
+            Grid.Column="0"
+            VerticalAlignment="Stretch" 
+            TextWrapping="NoWrap"
+            TextAlignment="Center"
+            Background="LightSeaGreen" />
+        <TextBlock x:Name="Playerone" HorizontalAlignment="Stretch" Grid.Row="1" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+
+        <Button Visibility="Hidden" Content="Play again!" FontSize="20" Background="DarkSlateGray" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" Grid.Row="2" Width="184" Height="34" VerticalAlignment="Center"/>
+        <Button Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="46" Width="66" Click="Button_Click_1">
+            <TextBlock Text="Ingame menu" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <TextBlock x:Name="Playertwo" Grid.Column="4" HorizontalAlignment="Stretch"  Grid.Row="1" Text="" FontSize="15" FontWeight="Heavy" TextWrapping="Wrap" VerticalAlignment="Stretch"   />
+        <TextBlock 
+            HorizontalAlignment="Stretch" 
+            Grid.Row="2" 
+            VerticalAlignment="Stretch" 
+            TextWrapping="NoWrap" 
+            Background="LightSeaGreen" Grid.Column="4"/>
+        <TextBlock Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Text="Player 1"/><Run Text="=  0 "/></TextBlock>
+        <TextBlock Visibility="Hidden" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Text="Player 2"/><Run Text="= 0 "/></TextBlock>
+        <TextBlock Visibility="Hidden" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"><Run Language="de-de" Text="Draw"/><Run Text=" "/><Run Language="de-de" Text="= 0"/></TextBlock>
+        <ProgressBar Visibility="Hidden"  Grid.Column="4" HorizontalAlignment="Left" Height="10" Margin="6,54,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+        <TextBlock Visibility="Hidden" Grid.Column="4" HorizontalAlignment="Left" Margin="31,33,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Text="Thinking" />
 
     </Grid>
 </Page>

@@ -20,6 +20,7 @@ namespace Wpf_Project_TTT
     {
         public Ingamemenu()
         {
+            
             InitializeComponent();
         }
 
@@ -27,7 +28,8 @@ namespace Wpf_Project_TTT
 
         private void Resume_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Game_GUI());
+            MainWindow.SzenenListe.RemoveLast();
+            NavigationService.Navigate(MainWindow.SzenenListe.Last);
         }
 
         private void Restart_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,14 @@ namespace Wpf_Project_TTT
 
         private void Backtomainmenu_Click(object sender, RoutedEventArgs e)
         {
+            Configuration next = new Configuration();
+            MainWindow.SzenenListe.AddLast(next);
+            NavigationService.Navigate(next);
+        }
+
+        private void Backtomainmenu_Click_1(object sender, RoutedEventArgs e)
+        {
+            
             NavigationService.Navigate(new Mainmenu());
         }
     }

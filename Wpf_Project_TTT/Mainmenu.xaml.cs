@@ -18,24 +18,32 @@ namespace Wpf_Project_TTT
     /// </summary>
     public partial class Mainmenu : Page
     {
+        //public static LinkedList<Page> SzenenListe = new LinkedList<Page>();
+
         public Mainmenu()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           NavigationService.Navigate(new NamePlayers());
+            NamePlayers next = new NamePlayers();
+            MainWindow.SzenenListe.AddLast(next);
+           NavigationService.Navigate(next);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NamePlayers());
+
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Configuration());
+            Configuration next = new Configuration();
+            MainWindow.SzenenListe.AddLast(next);
+            NavigationService.Navigate(next);
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

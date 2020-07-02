@@ -28,18 +28,18 @@ namespace Wpf_Project_TTT
         }
             
         
-        public static string Player2;
-        public static string Player1;
+         public static string Player2;
+         public static string Player1;
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-
-            NavigationService.Navigate(new Game_GUI());
+            Game_GUI next = new Game_GUI();
+            MainWindow.SzenenListe.AddLast(next);
+            NavigationService.Navigate(next);
         }
 
-        private void Player1name_TextChanged(object sender, TextChangedEventArgs e)
+        public void Player1name_TextChanged(object sender, TextChangedEventArgs e)
         {
             Player1 = Player1name.Text;
         }

@@ -20,71 +20,79 @@ namespace Wpf_Project_TTT
     /// </summary>
     public partial class Game_GUI : Page
     {
-        /* public class BoardDisplay
-         {
-             public string DisplayBoard(string[,] stringArray)
-             {
-                 string arrayString = " 1 2 3\n";
-                 int rowCounter = 1;
-                 int rowLength = stringArray.GetLength(0);
-                 int columnLength = stringArray.GetLength(1);
+           
+        public enum fieldstate
+        {
+            /// <summary>
+            /// The cell hasn't been clicked yet
+            /// </summary>
+            Free,
+            /// <summary>
+            /// The cell is a O
+            /// </summary>
+            Nought,
+            /// <summary>
+            /// The cell is an X
+            /// </summary>
+            Cross
+        }
+        #region Private Members
 
-                 for (int i= 0; i < rowLength; i++)
-                 {
-                     arrayString += rowCounter.ToString();
-                     arrayString += " ";
-                     for (int j = 0; j < columnLength; j++)
-                     {
-                         arrayString += stringArray[i, j];
-                         arrayString += " ";
-                     }
-                     arrayString += "\n";
-                     rowCounter++;
-                 }
-                 return arrayString.TrimEnd('\n');
-             }
-         } */
+        /// <summary>
+        /// Holds the current results of cells in the active game
+        /// </summary>
+        private fieldstate[] fResults;
 
-
+        /// <summary>
+        /// True if it is player 1's turn (X) or player 2's turn (O)
+        /// </summary>
         private bool Player1Turn;
+
+        /// <summary>
+        /// True if the game has ended
+        /// </summary>
         private bool GameEnded;
 
+        #endregion
         public Game_GUI()
-        {
-
+        {   
+            
+            
             InitializeComponent();
-
+            NewGame();
             Playerone.Text = NamePlayers.Player1;
             Playertwo.Text = NamePlayers.Player2;
-            NewGame();
-
         }
-
+        
         private void NewGame()
         {
-            fieldstate[]  field = new fieldstate[9];
+            // Create a new blank array of free cells
+            fResults = new fieldstate[9];
 
+            for (var i = 0; i < fResults.Length; i++)
+                fResults[i] = fieldstate.Free;
 
-            for (var i = 0; i < field.Length; i++)
-            {
-                field[i] = fieldstate.Free;
-            }
-
+            // Make sure Player 1 starts the game
             Player1Turn = true;
+
+            
+
+            // Interate every button on the grid...
+            Container.Children.Cast<Button>().ToList().ForEach(Button =>
+            {
+                // Change background, foreground and content to default values
+                Button.Content = string.Empty;
+                Button.Background = Brushes.White;
+                Button.Foreground = Brushes.Blue;
+            });  
+
+            // Make sure the game hasn't finished
             GameEnded = false;
-
         }
 
-        public fieldstate[] field;
-        
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Ingamemenu());
-        }
-
-       
-        private void FieldButton1_Click(object sender, RoutedEventArgs e)
-        {
+            // Start a new game on the click after it finished
             if (GameEnded)
             {
                 NewGame();
@@ -101,12 +109,11 @@ namespace Wpf_Project_TTT
             var index = column + (row * 3);
 
             // Don't do anything if the cell already has a value in it
-            if (field[index] != fieldstate.Free)
-            
+            if (fResults[index] != fieldstate.Free)
                 return;
-            
+
             // Set the cell value based on which players turn it is
-            field[index] = Player1Turn ? fieldstate.cross : fieldstate.Circle;
+            fResults[index] = Player1Turn ? fieldstate.Cross : fieldstate.Nought;
 
             // Set button text to the result
             button.Content = Player1Turn ? "X" : "O";
@@ -116,51 +123,10 @@ namespace Wpf_Project_TTT
                 button.Foreground = Brushes.Red;
 
             // Toggle the players turns
-            Player1Turn ^= true;
+            Player1Turn ^= true; //Player1Turn = ! Player1Turn;
 
             // Check for a winner
             CheckForWinner();
-
-        }
-
-        private void FieldButton2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton4_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton5_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton6_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton7_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton8_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void FieldButton9_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void CheckForWinner()
@@ -171,7 +137,7 @@ namespace Wpf_Project_TTT
             //
             //  - Row 0
             //
-            if (field[0] != fieldstate.Free && (field[0] & field[1] & field[2]) == field[0])
+            if (fResults[0] != fieldstate.Free && (fResults[0] & fResults[1] & fResults[2]) == fResults[0])
             {
                 // Game ends
                 GameEnded = true;
@@ -182,7 +148,7 @@ namespace Wpf_Project_TTT
             //
             //  - Row 1
             //
-            if (field[3] != fieldstate.Free && (field[3] & field[4] & field[5]) == field[3])
+            if (fResults[3] != fieldstate.Free && (fResults[3] & fResults[4] & fResults[5]) == fResults[3])
             {
                 // Game ends
                 GameEnded = true;
@@ -193,7 +159,7 @@ namespace Wpf_Project_TTT
             //
             //  - Row 2
             //
-            if (field[6] != fieldstate.Free && (field[6] & field[7] & field[8]) == field[6])
+            if (fResults[6] != fieldstate.Free && (fResults[6] & fResults[7] & fResults[8]) == fResults[6])
             {
                 // Game ends
                 GameEnded = true;
@@ -210,7 +176,7 @@ namespace Wpf_Project_TTT
             //
             //  - Column 0
             //
-            if (field[0] != fieldstate.Free && (field[0] & field[3] & field[6]) == field[0])
+            if (fResults[0] != fieldstate.Free && (fResults[0] & fResults[3] & fResults[6]) == fResults[0])
             {
                 // Game ends
                 GameEnded = true;
@@ -221,7 +187,7 @@ namespace Wpf_Project_TTT
             //
             //  - Column 1
             //
-            if (field[1] != fieldstate.Free && (field[1] & field[4] & field[7]) == field[1])
+            if (fResults[1] != fieldstate.Free && (fResults[1] & fResults[4] & fResults[7]) == fResults[1])
             {
                 // Game ends
                 GameEnded = true;
@@ -232,7 +198,7 @@ namespace Wpf_Project_TTT
             //
             //  - Column 2
             //
-            if (field[2] != fieldstate.Free && (field[2] & field[5] & field[8]) == field[2])
+            if (fResults[2] != fieldstate.Free && (fResults[2] & fResults[5] & fResults[8]) == fResults[2])
             {
                 // Game ends
                 GameEnded = true;
@@ -249,7 +215,7 @@ namespace Wpf_Project_TTT
             //
             //  - Top Left Bottom Right
             //
-            if (field[0] != fieldstate.Free && (field[0] & field[4] & field[8]) == field[0])
+            if (fResults[0] != fieldstate.Free && (fResults[0] & fResults[4] & fResults[8]) == fResults[0])
             {
                 // Game ends
                 GameEnded = true;
@@ -260,7 +226,7 @@ namespace Wpf_Project_TTT
             //
             //  - Top Right Bottom Left
             //
-            if (field[2] != fieldstate.Free && (field[2] & field[4] & field[6]) == field[2])
+            if (fResults[2] != fieldstate.Free && (fResults[2] & fResults[4] & fResults[6]) == fResults[2])
             {
                 // Game ends
                 GameEnded = true;
@@ -274,18 +240,31 @@ namespace Wpf_Project_TTT
             #region No Winners
 
             // Check for no winner and full board
-            if (!field.Any(f => f == fieldstate.Free))
+            if (!fResults.Any(f => f == fieldstate.Free))
             {
                 // Game ended
                 GameEnded = true;
 
                 // Turn all cells orange
-               
+                Container.Children.Cast<Button>().ToList().ForEach(button =>
+                {
+                    button.Background = Brushes.Orange;
+                });
             }
 
             #endregion
+
+
         }
 
         
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {   
+            
+            Ingamemenu next = new Ingamemenu();
+            MainWindow.SzenenListe.AddLast(next);
+            NavigationService.Navigate(next);
+        }
     }
 }
